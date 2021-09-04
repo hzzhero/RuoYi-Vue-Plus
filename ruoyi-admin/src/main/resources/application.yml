@@ -54,7 +54,7 @@ server:
 # 日志配置
 logging:
   level:
-    com.ruoyi: @logging.level@
+    com.ruoyi: debug
     org.springframework: warn
   config: classpath:logback.xml
 
@@ -67,7 +67,7 @@ spring:
     # 国际化资源文件路径
     basename: i18n/messages
   profiles:
-    active: @profiles.active@
+    active: dev
   # 文件上传
   servlet:
     multipart:
@@ -298,7 +298,7 @@ management:
       exposure:
         # 需要开放的端点。默认值只打开 health 和 info 两个端点。通过设置 * ，可以开放所有端点。
         # 生产环境不建议放开所有 根据项目需求放开即可
-        include: @endpoints.include@
+        include: health,env
   endpoint:
     logfile:
       external-file: ./logs/sys-console.log
